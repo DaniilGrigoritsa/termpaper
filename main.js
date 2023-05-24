@@ -38,20 +38,3 @@ const main = () => {
 
 main();
 
-/*
-'195': {
-    name: 'Спартак',
-    lineId: 7,
-    linkIds: [ 145, 146 ],
-    labelId: 195,
-    isTransferStation: false
-  }
-'227': {
-    type: 'link',
-    fromStationId: 189,
-    toStationId: 190,
-    weightTime: 170,
-    weightTransfer: 0
-  }
-*/
-
