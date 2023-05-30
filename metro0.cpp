@@ -23,7 +23,7 @@ bool includes(wstring station) {
 St input() {
     St st;
     bool flag = true;
-    wcout << L"Введите станцию отправления: \n";
+    wcout << L"\nВведите станцию отправления: \n";
     while (flag) {
         getline(wcin, st.departure);
         if (includes(st.departure)) flag = false;
@@ -77,6 +77,13 @@ vector<int> find_shortest_path(int parent[], int dest) {
     return path;
 }
 
+void output() {
+    wcout << L"Список станций, доступных для выбора: \n";
+    for(int i = 0; i < STATIONS; i+=3) {
+        wcout << stations[i] << ", " << stations[i + 1] << ", " << stations[i + 2] << "\n";
+    }
+}
+
 void dijkstra(int graph[STATIONS][STATIONS], int src, int dest) {
     int dist[STATIONS];
     bool visited[STATIONS];
@@ -116,6 +123,8 @@ int main() {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     setlocale(LC_ALL, "");
+
+    output();
 
     wstring arrival, departure;
     St st = input();
