@@ -9,18 +9,21 @@ const links = metro.default[0].links; // all links belween all stations with tim
 const transfers = metro.default[0].transfers;
 const labels = metro.default[0].labels;
 
-console.log(stations)
-
+let lineIds = [];
+for(let i = 1; i < 196; i++) {
+    lineIds.push(stations[i].lineId)
+}
+console.log(lineIds)
+/*
 for(let i = 0; i < 195; i++) {
     if (stations[i].labelId != i) {
         console.log(stations[i].name)
         console.log(stations[i].labelId)
     }
 }
+*/
 
-/*
-fs.writeFile('file.json', JSON.stringify(weightTime), (error) => {
+fs.writeFile('file.json', JSON.stringify(lineIds), (error) => {
     if (error) throw error;
     console.log('Данные успешно записаны в файл');
 });
-*/
